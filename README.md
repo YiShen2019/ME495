@@ -138,7 +138,7 @@ $ rosparam list
 ```
 $ rqt_graph
 ```
-
+![rosgraph](https://user-images.githubusercontent.com/55845795/71335170-04939100-2507-11ea-839f-6110a46ead34.png)
 
 14.
 ```
