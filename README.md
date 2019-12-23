@@ -193,4 +193,9 @@ $ rosrun crazy_turtle mover cmd_vel:=/turtle1/cmd_vel
 
 21.
 Its velocity changed to 10.
+
 The launch file initialized its velocity.
+
+## Part 2: Turtle Control
+
+
