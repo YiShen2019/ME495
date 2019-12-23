@@ -8,7 +8,7 @@
 ```
 $ source /opt/ros/melodic/setup.bash
 $ mkdir -p ~/catkin_ws1/src
-$ cd ~/catkin_ws1/
+$ cd ~/catkin_ws1/src
 ```
 2.
 ```
