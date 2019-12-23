@@ -6,42 +6,42 @@
 
 1.
 ```
-source /opt/ros/melodic/setup.bash
-mkdir -p ~/catkin_ws1/src
-cd ~/catkin_ws1/
+$ source /opt/ros/melodic/setup.bash
+$ mkdir -p ~/catkin_ws1/src
+$ cd ~/catkin_ws1/
 ```
 2.
 ```
-wstool init ~/catkin_ws1/src
-wstool set --git crazy_turtle https://github.com/m-elwin/crazy_turtle 
-wstool up
+$ wstool init ~/catkin_ws1/src
+$ wstool set --git crazy_turtle https://github.com/m-elwin/crazy_turtle 
+$ wstool up
 ```
 
 3.
 ```
-wstool set --git turtle_control https://github.com/YiShen2019/ME495
-wstool up
+$ wstool set --git turtle_control https://github.com/YiShen2019/ME495
+$ wstool up
 ```
 
 4.
 ```
-catkin_make
+$ catkin_make
 ```
 
 5.
 ```
-source devel/setup.bash
+$ source devel/setup.bash
 ```
 
 6.
 ```
-cd ~/catkin_ws1/src/crazy_turtle/launch
-roslaunch go_crazy_turtle.launch
+$ cd ~/catkin_ws1/src/crazy_turtle/launch
+$ roslaunch go_crazy_turtle.launch
 ```
 
 7.
 ```
-rosnode list
+$ rosnode list
 ```
     /mover
     /roaming_turtle
@@ -49,7 +49,7 @@ rosnode list
 
 8.
 ```
-rostopic list
+$ rostopic list
 ```
     /rosout
     /rosout_agg
@@ -59,7 +59,7 @@ rostopic list
 
 9.
 ```
-rostopic hz /turtle1/cmd_vel
+$ rostopic hz /turtle1/cmd_vel
 ```
     subscribed to [/turtle1/cmd_vel]
     average rate: 99.884
@@ -73,7 +73,7 @@ THe frequency is about 100Hz.
 
 10.
 ```
-rosservice list
+$ rosservice list
 ```
     /clear
     /kill
@@ -92,10 +92,10 @@ rosservice list
 
 11.
 ```
-cd ~/catkin_ws1/
-catkin_make
-source devel/setup.bash
-rosservice type /switch | rossrv show
+$ cd ~/catkin_ws1/
+$ catkin_make
+$ source devel/setup.bash
+$ rosservice type /switch | rossrv show
 ```
     turtlesim/Pose mixed_up
       float32 x
@@ -108,12 +108,12 @@ rosservice type /switch | rossrv show
     float64 y
 
 ```
-rosservice type /switch
+$ rosservice type /switch
 ```
     crazy_turtle/Switch
 
 ```
-rosservice node /switch
+$ rosservice node /switch
 ```
     /mover
 
@@ -123,7 +123,7 @@ The node is 'mover'.
 
 12.
 ```
-rosparam list
+$ rosparam list
 ```
     /background_b
     /background_g
@@ -136,12 +136,12 @@ rosparam list
 
 13.
 ```
-rqt_graph
+$ rqt_graph
 ```
 
 14.
 ```
-rospack depends1 crazy_turtle 
+$ rospack depends1 crazy_turtle 
 ```
     rospy
     message_runtime
@@ -149,13 +149,13 @@ rospack depends1 crazy_turtle
 
 15.
 ```
-rossrv package crazy_turtle
+$ rossrv package crazy_turtle
 ```
     crazy_turtle/Switch
 
 16.
 ```
-rosservice call /switch [1,1,0.30,2,5]
+$ rosservice call /switch [1,1,0.30,2,5]
 ```
     x: 5.0
     y: 2.0
@@ -164,30 +164,30 @@ It returns the new position x and y, which new_x = x*angular velocity and new_y 
 
 17.
 ```
-rosparam get /mover/velocity
+$ rosparam get /mover/velocity
 ```
     5
 
 18.
 ```
-rosparam set /mover/velocity 10
+$ rosparam set /mover/velocity 10
 ```
 ```
-rosparam get /mover/velocity
+$ rosparam get /mover/velocity
 ```
     10
 The turtle doesn't change it's velocity.
 
 19.
 ```
-rosnode kill /mover
+$ rosnode kill /mover
 ```
     killing /mover
     killed
 
 20.
 ```
-rosrun crazy_turtle mover cmd_vel:=/turtle1/cmd_vel
+$ rosrun crazy_turtle mover cmd_vel:=/turtle1/cmd_vel
 ```
 
 21.
