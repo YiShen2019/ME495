@@ -138,6 +138,7 @@ $ rosparam list
 ```
 $ rqt_graph
 ```
+/home/yi/Desktop/rosgraph.png
 
 14.
 ```
