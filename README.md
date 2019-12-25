@@ -251,6 +251,52 @@ $ rosrun rqt_logger_level rqt_logger_level
 ```
 
 5.
+```
+$ rosrun turtle_control turtle_interpret
+$ rostopic pub -1 turtle_vel turtle_control/TurtleVel "{linearvel: 1.0, angularvel: 1.0}"
+```
+[INFO] [1577316162.659775]: Message from turtle_vel: linear 1.0 angular 1.0
+
+6.
+```
+$ gedit VelTranslate.srv
+$ cd ~/catkin_ws1
+$ catkin_make
+```
+
+7.
+```
+rosservice call /vel_translate "input_Twist:
+  linear:
+    x: 1.0
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 1.0"
+```
+output_TurtleVel: 
+  linearvel: 1.0
+  angularvel: 1.0
+  debug_message: ''
+
+```
+rosservice call /vel_translate "input_Twist:
+  linear:
+    x: 1.0
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 2.0
+    z: 1.0"
+```
+ERROR: service [/vel_translate] responded with an error: service cannot process request: service handler returned None
+
+### Turtle waypoint
+
+1.
 
 
 
