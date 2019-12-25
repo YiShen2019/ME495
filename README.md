@@ -198,4 +198,18 @@ The launch file initialized its velocity.
 
 ## Part 2: Turtle Control
 
+1.
+```
+$ cd ~/catkin_ws1/src
+$ catkin_create_pkg turtle_control
+```
+
+2.
+```
+$ cd turtle_control
+$ git config --global user.email "yishen2019@u.northwestern.edu"
+$ git config --global user.name "YiShen2019"
+$ git add package.xml
+$ git commit -m "edit default"
+```
 
