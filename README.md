@@ -201,15 +201,58 @@ The launch file initialized its velocity.
 1.
 ```
 $ cd ~/catkin_ws1/src
-$ catkin_create_pkg turtle_control
+$ catkin_create_pkg turtle_control 
 ```
 
-2.
+3.
 ```
-$ cd turtle_control
+$ cd turtle_control turtlesim rospy std_msgs 
 $ git config --global user.email "yishen2019@u.northwestern.edu"
 $ git config --global user.name "YiShen2019"
 $ git add package.xml
 $ git commit -m "edit default"
 ```
+
+4.
+```
+$ cd ..
+$ rosinstall_generator desktop_full --rosdistro hydro --deps > homework1.rosinstall
+```
+
+### Velocity Translator
+
+1.
+```
+$ cd ~/catkin_ws1/src/turtle_control
+$ mkdir msg
+$ cd msg
+$ gedit TurtleVel.msg
+```
+
+2.
+```
+$ cd ~/catkin_ws1
+$ catkin_make
+```
+
+3.
+```
+$ cd ~/catkin_ws1/src/turtle_control
+$ mkdir scripts
+$ cd scripts
+$ gedit turtle_interpret
+$ chmod 755 scripts/turtle_interpret
+```
+
+4.
+```
+$ rosrun rqt_console rqt_console
+$ rosrun rqt_logger_level rqt_logger_level
+```
+
+5.
+
+
+
+
 
