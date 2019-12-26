@@ -297,7 +297,22 @@ ERROR: service [/vel_translate] responded with an error: service cannot process 
 ### Turtle waypoint
 
 1.
+```
+$ cd ~/catkin_ws1/src/turtle_control/scripts
+$ gedit waypoint
+```
 
+2.
+```
+$ cd ~/catkin_ws1/src/turtle_control
+$ mkdir launch
+$ cd launch
+$ gedit waypoint_follow.launch
+```
+
+3.
+```
+$ 
 
 
 
